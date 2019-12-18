@@ -1,0 +1,20 @@
+<body>
+
+	<main class="show">
+		<div class="title clearfix">
+			<p class="headline">Title:</p>
+			<p class="text"><%= @book.title %></p>
+		</div>
+
+		<div class="body clearfix">
+			<p class="headline">Body:</p>
+			<p class="text"><%= @book.body %></p>
+		</div>
+
+		<div class="link clearfix">
+			<p class="link-item"><%= link_to 'Edit', edit_book_path %></p>
+			<p class="link-item">｜</p>
+			<p class="link-item"><%= link_to 'Back', books_path %></p>
+		</div>
+	</main>
+</body>
