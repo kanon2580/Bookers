@@ -1,15 +1,26 @@
 <body>
 	<main>
-			<h1>Editing Book</h1>
+		<h1>Editing Book</h1>
+
+		<% if @book.errors.any? %>
+ 		<div class="error">
+ 			<p class="error-headline"><%= pluralize(@book.errors.count,"error") %> prohibited this book from being saved:</p>
+   			<ul class="error-list">
+      			<% @book.errors.full_messages.each do |message| %>
+        			<li class="error-li"><%= message %></li>
+      			<% end %>
+    		</ul>
+  		</div>
+		<% end %>
 
 		<%= form_for(@book) do |f| %>
 			<div class="edit-item">
-				<p>Title</p>
+				<p><%= f.label :title %></p>
 				<span><%= f.text_field :title %></span>
 			</div>
 
 			<div class="edit-item">
-				<p>Body</p>
+				<p><%= f.label :body %></p>
 				<span><%= f.text_area :body %></span>
 			</div>
 

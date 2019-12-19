@@ -1,6 +1,14 @@
 <body>
-
 	<main class="show">
+
+		<% if flash[:created] %>
+			<p class="success-massage"><%= flash[:created] %></p>
+		<% end %>
+
+		<% if flash[:updated] %>
+			<p class="success-massage"><%= flash[:updated] %></p>
+		<% end %>
+
 		<div class="title clearfix">
 			<p class="headline">Title:</p>
 			<p class="text"><%= @book.title %></p>
